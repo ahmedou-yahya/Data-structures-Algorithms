@@ -2,11 +2,9 @@ package Algos.SortingAlgo;
 
 public class BubbleSort {
 
-    public static double[] bubbleSort(double[] arr){
-        if(arr.length<=1){
-            return arr;
-        }
-        double temp;
+    public static void bubbleSort(int[] arr){
+
+        int temp;
         boolean isSorted = false;
         while (!isSorted){
             isSorted = true;
@@ -19,13 +17,20 @@ public class BubbleSort {
                 }
             }
         }
+    }
 
-        return arr;
+    void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
     }
     public static  void main(String[] args){
-        double[] arr = {5,2,3,0,1,4};
-        arr = bubbleSort(arr);
-        for(double a : arr)
-        System.out.println(a);
+        BubbleSort ob = new BubbleSort();
+        int arr[] = {64,25,12,22,11,11};
+        ob.bubbleSort(arr);
+        System.out.println("Sorted array");
+        ob.printArray(arr);
     }
 }
